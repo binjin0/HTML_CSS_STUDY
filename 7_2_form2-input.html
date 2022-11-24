@@ -8,7 +8,82 @@
   </head>
   <body>
     <form action="">
-      <input type="text" />
+      <fieldset>
+        <legend>Input Tag</legend>
+        <ul>
+          <li>
+            <!-- for와 id는 편의상 type과 같게함. 따라서 꼭 type 속성값과 같을 필요는 없고
+            for와 id의 속성값끼리만 같으면 된다! -->
+            <label for="text">Text</label>
+            <input type="text" id="text" required />
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input type="email" id="email" required />
+          </li>
+          <li>
+            <label for="tel">전화전호</label>
+            <input type="tel" id="tel" required />
+          </li>
+          <li>
+            <label for="url">url</label>
+            <input type="url" id="url" required />
+          </li>
+          <li>
+            <label for="number">number</label>
+            <input type="number" id="number" required min="5" max="10" />
+          </li>
+          <li>
+            <label for="range">range</label>
+            <input type="range" id="range" required />
+          </li>
+          <li>
+            <label for="password">password</label>
+            <input type="password" id="password"  required/>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>날짜관련</legend>
+        <ul>
+          <li>
+            <label for="date">날짜</label>
+            <input type="date" id="date" min="2021-07-10" max="2023-07-15" />
+          </li>
+          <li>
+            <label for="month">month</label>
+            <input type="month" id="month" />
+          </li>
+          <li>
+            <label for="week">week</label>
+            <input type="week" id="week" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>시간관련</legend>
+        <ul>
+          <li>
+            <label for="time">time</time></lavel>
+            <input type="time" id="time" min="16:00" max="18:00" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>그 외</legend>
+        <ul>
+          <li>
+            <input type="file" multiple />
+            <!--multiple 속성 : 파일을 여러개 선택할 수 있게함.-->
+          </li>
+          <li>
+            <!--hidden : 서버측으로 어떠한 데이터를 넘길때 사용함.
+            이 input type="hiiden"은 ui상으로 나타나지 않는다.-->
+            <input type="hidden" name="" value="" />        
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="제출하기" />
     </form>
   </body>
 </html>
