@@ -15,10 +15,23 @@
         background-color: yellow;
         padding: 10px;
       }
+      * {
+        /*css 출처 적용 우선순위
+        사용자 important -> 제작자 important ->사용자-> 브라우저
+        아래 예시를 보면 important를 썼기때문에 a태그에 대한 css가 무시되고 모두 
+        노란색으로 나타나게됨. important가 없다면 a태그 css지정해준대로
+        red로 뜨겠죠?*/
+        color: yellow !important;
+      }
+      a {
+        color: red;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <h1>헬스</h1>
     <p class="content">오늘도 헬스장에서 운동을 한다.</p>
+    <a href="#">네이버</a>
   </body>
 </html>
