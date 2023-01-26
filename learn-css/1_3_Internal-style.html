@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Internal Style</title>
     <style>
-      /* 내부스타일 */
       h1 {
         color: blue;
       }
@@ -15,12 +14,9 @@
         background-color: yellow;
         padding: 10px;
       }
+      /*아래 별표는 스타일을 넣을 대상이 모두일 때 쓴다. 그러나 a스타일의 color:red때문에
+      모든 글씨가 노란색으로 바뀌지 않는다. 모든 글씨를 노란색으로 바꾸고 싶다면 important를 사용할것*/
       * {
-        /*css 출처 적용 우선순위
-        사용자 important -> 제작자 important ->사용자-> 브라우저
-        아래 예시를 보면 important를 썼기때문에 a태그에 대한 css가 무시되고 모두 
-        노란색으로 나타나게됨. important가 없다면 a태그 css지정해준대로
-        red로 뜨겠죠?*/
         color: yellow !important;
       }
       a {
@@ -31,7 +27,7 @@
   </head>
   <body>
     <h1>헬스</h1>
-    <p class="content">오늘도 헬스장에서 운동을 한다.</p>
-    <a href="#">네이버</a>
+    <p class="content">오늘도 헬스장에서 운동을 합니다.</p>
+    <a href="a">네이버</a>
   </body>
 </html>

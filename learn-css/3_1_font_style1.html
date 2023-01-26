@@ -4,11 +4,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>font style 1</title>
-    <style></style>
+    <title>Font Style</title>
+    <style>
+      /*외부에서 폰트 가져오는 방법. 아래와 같이 style태그 맨위에 선언하기.*/
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      html {
+        font-family: "Nanum Gothic", sans-serif;
+        font-size: 16px;
+      }
+      .title {
+        font-size: 20px;
+        color: rgb(113, 185, 127);
+      }
+      .content {
+        font-size: 18px;
+      }
+      .font-italic {
+        font-style: italic;
+      }
+      .font-weight-bold {
+        font-weight: bold;
+      }
+      .font-weight-300 {
+        font-weight: 300;
+      }
+      .font-variant {
+        font-variant: small-caps;
+      }
+      .subtitle {
+        font: size 20px;
+      }
+      .subtitle-rem {
+        /*rem->최상위 요소인 html태그의 글꼴의 크기. 즉 루트의 글꼴
+        따라서 아래 2rem은 html태그의 글꼴의 크기의 2배를 뜻함.즉 32px이겠죠?*/
+        font-size: 2rem;
+      }
+      .subtitle-em {
+        /*현재 자신의 글꼴 크기의 몇배만큼 할 거냐라는 뜻이다.*/
+        font-size: 2em;
+      }
+      /*rectangle과 width태그를 갖고 있는 요소 선택*/
+      .rectangle.width {
+        /*vw:viewport width (viewport는 전체 너비를 뜻함) 즉 전체너비의 가로가 몇%로 나타낸다는 뜻의 단위이다.*/
+        width: 20vw;
+        height: 100px;
+        background-color: yellow;
+      }
+      /*vh:전체 너비의 세로(높이)가 몇%로 나타남*/
+      .rectangle.height {
+        height: 20vh;
+        width: 100px;
+        background-color: blue;
+      }
+    </style>
   </head>
   <body>
-    <h2 class="title">유튜브, 짐코딩 채널</h2>
-    <p class="content">실용적인 코딩 컨텐츠를 만들어가는 짐코딩입니다.</p>
+    <h2 class="title">유튜브 짐코딩 채널</h2>
+    <p class="content">실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.</p>
+    <p class="content font-italic">
+      실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.
+    </p>
+    <p class="content font-weight-bold">
+      실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.
+    </p>
+    <p class="content font-weight-300">
+      실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.
+    </p>
+    <p class="content font-variant">HELLO, gymcoding</p>
+    <hr />
+    <h2>px</h2>
+    <p class="subtitle">실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.</p>
+    <h2>rem</h2>
+    <p class="subtitle-rem">실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.</p>
+    <h2>em</h2>
+    <p class="subtitle-em">실용적인 코딩 컨텐츠를 만들어가는 코딩입니다.</p>
+    <hr />
+    <!--viewport width-->
+    <h2 class="rectangle width">vw</h2>
+    <!--viewport height-->
+    <h2 class="rectangle height">vh</h2>
   </body>
 </html>
