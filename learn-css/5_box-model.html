@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      /*Content(width, height를 사용하여 크기지정가능), Padding, Margin, Border*/
+      div.content {
+        background-color: rgb(248, 239, 239);
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        border: 10px solid green;
+        margin: 40px;
+      }
+      span {
+        border: 1px solid red;
+        /*span은 인라인 요소이기 때문에 width와 height가 적용되지 않는다.
+        따라서 인라인과 블록의 중간 요소인 inline-block을 사용하여 바꾸어야 width와 height를 지정할 수 있다.*/
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+      }
+      div.padding {
+        border: 1px solid black;
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 50px;
+        /*=padding: 50px 30px 상하, 좌우 (현업에서는 이렇게 표기 많이함)
+          =padding: 50px 30px 30px 50px 위 오 왼 아*/
+      }
+      div.margin {
+        border: 1px solid red;
+        margin: 20px;
+      }
+      .shape {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content"></div>
+    <span>Hello CSS</span>
+    <div class="padding">
+      안녕하세요 김치볶음밥은 맛있습니다.ekekekekdekekekekdkdkdkdkdkdkdkdkdk
+    </div>
+    <div class="margin">
+      안녕하세요 김치볶음밥은 맛있습니다.ekekekekdekekekekdkdkdkdkdkdkdkdkdk
+    </div>
+    <!--마진 중첩현상-->
+    <!--두개의 요소가 마진 중첩현상에 의해 세로가 40px 떨어져야하는 것이 20px만 떨어져서 나타나게 된다.-->
+    <!--but body안에서 style을 적용하는 경우 즉 <div class="shape" style="margin-bottom: 40px">이렇게 쓰면 
+    우선순위에 의해 magin-bottom은 40px이기때문에 아래 shape이 위쪽 shape에 중첩되게 되어 결국 공간은 40px떨어진 것 처럼 보인다.  -->
+    <div class="shape" style="margin-bottom: 40px"></div>
+    <div class="shape"></div>
+  </body>
+</html>
