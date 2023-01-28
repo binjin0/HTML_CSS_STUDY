@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Calss&Element</title>
+    <style>
+      /*<가상 클래스>*/
+      a {
+        font-size: 30px;
+      }
+      /*가상 클래스 link : 아직 방문전인 요소를 설정함*/
+      a:link {
+        color: cyan;
+      }
+      /*가상 클래스 visited : 이미 방문한(클락한 후인) 요소를 설정함 */
+      a:visited {
+        color: red;
+      }
+      a:hover {
+        color: blue;
+        font-weight: 900;
+      }
+      fieldset:hover {
+        background-color: lightgray;
+        box-shadow: 0 0 20px gray;
+      }
+      /*가상클래스 active :요소를 클릭한 순간을 설정*/
+      a:active {
+        color: yellow;
+      }
+      input:focus {
+        outline: none;
+        border: 3px solid red;
+        box-shadow: 0 0 20px rgb(243, 132, 132);
+      }
+
+      .field {
+        margin-bottom: 10px;
+      }
+      li:nth-child(1) {
+        background-color: yellow;
+      }
+      li:not(.target) {
+        font-size: 30px;
+      }
+      /*<가상 요소>*/
+      .required::before {
+        content: "*";
+        margin-right: 2px;
+        color: red;
+        font-size: 10px;
+      }
+      [data-tooltip] {
+        position: relative;
+      }
+      [data-tooltip]:hover:after {
+        content: attr(data-tooltip);
+        /*absolute로만 적용하면 조상태그중에 static이 아닌 태그들로 적용되기 때문에
+        body태그기준으로 적용된다. 따라서 바로 위에 적은 [data-tooltip]{}에 
+        적은 것처럼relative를 적어주면 기준이 button으로 바뀐다. */
+        position: absolute;
+        background-color: black;
+        top: 0px;
+        left: 58px;
+        color: white;
+        width: 220px;
+      }
+      .letter::first-letter {
+        font-size: 60px;
+        color: blue;
+      }
+      .line::first-line {
+        background-color: yellow;
+        color: blue;
+        font-size: 20px;
+      }
+      /*사용자가 선택한 부분*/
+      p::selection {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!--fieldset : 하나의 그룹으로 묶은 요소들 주변으로 박스 모양의 선을 그려줌-->
+    <fieldset>
+      <legend>Pseudo Class</legend>
+      <div>
+        <a href="http://www.naver.com">네이버</a>
+        <a href="http://www.kakao.com">카카오</a>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>focus, befor, after</legend>
+      <div class="field">
+        <label class="required" for="name">이름</label>
+        <input type="text" id="name" />
+      </div>
+
+      <div class="field">
+        <label class="required" for="age">나이</label>
+        <input type="text" id="age" />
+      </div>
+      <button data-tooltip="이 버튼을 클릭하여 정보를 보내세요">보내기</button>
+    </fieldset>
+    <fieldset>
+      <legend>nth-child, not</legend>
+      <ul>
+        <li class="target">1content</li>
+        <li>2content</li>
+        <li>3content</li>
+        <li>4content</li>
+        <li>5content</li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>first-letter, first-line, selection</legend>
+      <div>
+        <p class="letter">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+          laudantium dolore dolores amet voluptatibus, culpa unde consequuntur
+          ullam obcaecati exercitationem facilis architecto placeat deleniti
+          nostrum? Est facilis cum voluptates quaerat? Accusamus dicta beatae,
+          quo facilis a voluptatum? Quos amet aliquam sunt! Alias, corporis
+          facere? Nostrum, exercitationem quam. Voluptatum voluptatibus
+          distinctio ad laborum esse sunt consequatur in et nulla. Commodi, quo!
+        </p>
+        <p class="line">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+          ducimus aspernatur, alias iure ipsum et optio aliquam? Atque deleniti
+          veniam voluptates consequuntur optio recusandae? Reiciendis optio
+          obcaecati provident pariatur odit. Id ad, libero dolore in ipsum,
+          maxime, esse assumenda eum quae molestias eos. Ipsum neque odio, ad
+          exercitationem nobis dolore ea praesentium in corrupti amet expedita,
+          dicta aperiam soluta veritatis?
+        </p>
+      </div>
+    </fieldset>
+  </body>
+</html>
