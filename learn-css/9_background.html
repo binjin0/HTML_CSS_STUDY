@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <style>
+      .red {
+        background-color: red;
+        width: 120px;
+        height: 120px;
+      }
+      .image {
+        background-image: url("../assets/images/background-g9a9d8903c_640.jpg");
+        /*이 사진은 가로가 240px인데 화면에 꽉차게 나오는 이유는 사진이 설정한 600px을
+        위해 반복됐기때문이다. 따라서 background-repeat:no-repeat을 사용하면
+        사지이 반복되지 않고 굳이 정해진 넓이를 꽉채우지 않고 나타나게 된다.*/
+        background-repeat: repeat;
+        background-position-x: center;
+        width: 200px;
+        height: 400px;
+        border: 1px solid black;
+        /*여기까지 쓰면 세로로 길게나타나게함. 따라서 inline-block을 써서
+        가로로 나타나게 해준다.*/
+        display: inline-block;
+        /*데이터가 세로가 넘쳤기때문에 overflow-y를 이용해준다.*/
+        overflow-y: scroll;
+      }
+      /*scroll / fixed / local 차이점 알아두기 
+        */
+      .attachment-scroll {
+        background-attachment: scroll;
+      }
+      .attachment-fixed {
+        background-attachment: fixed;
+      }
+      .attachment-local {
+        background-attachment: local;
+      }
+      .background-size {
+        width: 300px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-image: url(../assets/images/football.jpg);
+        /*background-image는 대부분 사이트 배경으로 사용되기때문에 size를 보통 auto가 아닌 cover로 설정한다.*/
+        background-size: cover;
+        background-position: center;
+        border: 1px solid black;
+      }
+      .linear-gradient {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+        background: linear-gradient(
+          to top right,
+          red 50%,
+          blue 80%,
+          yellow 100%
+        );
+      }
+      .radial-gradient {
+        width: 500px;
+        height: 200px;
+        border: 1px solid black;
+        /*circle at을 통해 가운데 기준인 원점을 움직일 수 있음*/
+        background: radial-gradient(
+          circle at 10% 50%,
+          white,
+          yellow,
+          red,
+          blue
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <h3>backgorund-color</h3>
+    <div class="red"></div>
+    <h3>background-image</h3>
+    <div class="image attachment-scrall">
+      <!--div태그는 가로가 200px 세로가 400px로 정해져있는데 데이터는 아래와 같이 넘쳐난다.
+      그러면 스크롤을 사용하여 규격안에 들어가게 한다.-->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+      temporibus similique, aspernatur repellendus harum vero alias incidunt
+      quod nemo? Eveniet tenetur earum labore accusantium inventore ut aperiam
+      sapiente. Omnis, veritatis? Quia mollitia, inventore eum dolorem nisi,
+      ducimus veniam velit nulla expedita debitis qui fugiat ad! Aliquid, vero
+      dolorem quos ipsa saepe, quibusdam eaque consequatur omnis nostrum
+      explicabo numquam! Impedit, dolorem? Maiores dolores, blanditiis doloribus
+      ratione qui, architecto error consequatur explicabo mollitia assumenda
+      quam officia in, odit cumque possimus ducimus fugit necessitatibus tempora
+      autem dicta! Ipsam ipsum deleniti laudantium fugiat quia. Molestiae earum
+      animi quaerat fugiat debitis eum vitae placeat natus obcaecati alias
+      recusandae dolores eaque, corporis ipsa omnis quisquam dicta magnam
+      repellendus porro soluta ducimus ea. Quia tempora ad saepe? Nam, minima
+      cumque distinctio cum similique nisi a enim fugit illo repellendus
+      nesciunt dolorum, eaque ut dicta est quae doloremque praesentium vero
+      excepturi soluta, debitis laborum molestiae ipsa eius? Error? In ab
+      expedita vel. At unde debitis quos? Harum, accusamus quo! Repellendus a
+      unde quidem eius libero rem reiciendis autem! Hic, ullam! Fuga ex nihil
+      eligendi accusamus deserunt debitis vitae. Quibusdam, magni omnis. Dicta
+      ad error reprehenderit facilis asperiores earum incidunt eius? Dignissimos
+      expedita consequuntur quis dolorum saepe asperiores, esse, dolorem neque
+      blanditiis voluptatem perferendis repellendus tempora sed eligendi vero!
+      Vero ducimus dicta blanditiis saepe corrupti molestiae eius sunt eaque
+      sint temporibus repellendus iusto, voluptas, aliquid nulla ea velit
+      quisquam. Earum ullam et dolorem eaque deleniti, nihil nam adipisci
+      architecto.
+    </div>
+    <div class="image attachment-fixed">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+      temporibus similique, aspernatur repellendus harum vero alias incidunt
+      quod nemo? Eveniet tenetur earum labore accusantium inventore ut aperiam
+      sapiente. Omnis, veritatis? Quia mollitia, inventore eum dolorem nisi,
+      ducimus veniam velit nulla expedita debitis qui fugiat ad! Aliquid, vero
+      dolorem quos ipsa saepe, quibusdam eaque consequatur omnis nostrum
+      explicabo numquam! Impedit, dolorem? Maiores dolores, blanditiis doloribus
+      ratione qui, architecto error consequatur explicabo mollitia assumenda
+      quam officia in, odit cumque possimus ducimus fugit necessitatibus tempora
+      autem dicta! Ipsam ipsum deleniti laudantium fugiat quia. Molestiae earum
+      animi quaerat fugiat debitis eum vitae placeat natus obcaecati alias
+      recusandae dolores eaque, corporis ipsa omnis quisquam dicta magnam
+      repellendus porro soluta ducimus ea. Quia tempora ad saepe? Nam, minima
+      cumque distinctio cum similique nisi a enim fugit illo repellendus
+      nesciunt dolorum, eaque ut dicta est quae doloremque praesentium vero
+      excepturi soluta, debitis laborum molestiae ipsa eius? Error? In ab
+      expedita vel. At unde debitis quos? Harum, accusamus quo! Repellendus a
+      unde quidem eius libero rem reiciendis autem! Hic, ullam! Fuga ex nihil
+      eligendi accusamus deserunt debitis vitae. Quibusdam, magni omnis. Dicta
+      ad error reprehenderit facilis asperiores earum incidunt eius? Dignissimos
+      expedita consequuntur quis dolorum saepe asperiores, esse, dolorem neque
+      blanditiis voluptatem perferendis repellendus tempora sed eligendi vero!
+      Vero ducimus dicta blanditiis saepe corrupti molestiae eius sunt eaque
+      sint temporibus repellendus iusto, voluptas, aliquid nulla ea velit
+      quisquam. Earum ullam et dolorem eaque deleniti, nihil nam adipisci
+      architecto.
+    </div>
+    <div class="image attachment-local">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+      temporibus similique, aspernatur repellendus harum vero alias incidunt
+      quod nemo? Eveniet tenetur earum labore accusantium inventore ut aperiam
+      sapiente. Omnis, veritatis? Quia mollitia, inventore eum dolorem nisi,
+      ducimus veniam velit nulla expedita debitis qui fugiat ad! Aliquid, vero
+      dolorem quos ipsa saepe, quibusdam eaque consequatur omnis nostrum
+      explicabo numquam! Impedit, dolorem? Maiores dolores, blanditiis doloribus
+      ratione qui, architecto error consequatur explicabo mollitia assumenda
+      quam officia in, odit cumque possimus ducimus fugit necessitatibus tempora
+      autem dicta! Ipsam ipsum deleniti laudantium fugiat quia. Molestiae earum
+      animi quaerat fugiat debitis eum vitae placeat natus obcaecati alias
+      recusandae dolores eaque, corporis ipsa omnis quisquam dicta magnam
+      repellendus porro soluta ducimus ea. Quia tempora ad saepe? Nam, minima
+      cumque distinctio cum similique nisi a enim fugit illo repellendus
+      nesciunt dolorum, eaque ut dicta est quae doloremque praesentium vero
+      excepturi soluta, debitis laborum molestiae ipsa eius? Error? In ab
+      expedita vel. At unde debitis quos? Harum, accusamus quo! Repellendus a
+      unde quidem eius libero rem reiciendis autem! Hic, ullam! Fuga ex nihil
+      eligendi accusamus deserunt debitis vitae. Quibusdam, magni omnis. Dicta
+      ad error reprehenderit facilis asperiores earum incidunt eius? Dignissimos
+      expedita consequuntur quis dolorum saepe asperiores, esse, dolorem neque
+      blanditiis voluptatem perferendis repellendus tempora sed eligendi vero!
+      Vero ducimus dicta blanditiis saepe corrupti molestiae eius sunt eaque
+      sint temporibus repellendus iusto, voluptas, aliquid nulla ea velit
+      quisquam. Earum ullam et dolorem eaque deleniti, nihil nam adipisci
+      architecto.
+    </div>
+    <div class="background-size"></div>
+    <!--background-attachment croll과 fixed의 차이를 보여주기위한 코드-->
+    <h3>linear-gradient</h3>
+    <div class="linear-gradient"></div>
+    <h3>radial-gradient</h3>
+    <div class="radial-gradient"></div>
+    <div style="height: 1000px; width: 10px; background-color: red"></div>
+  </body>
+</html>
