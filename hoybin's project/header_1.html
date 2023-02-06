@@ -11,44 +11,78 @@
     <title>nav bar</title>
   </head>
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-      text-decoration: none;
-      list-style: none;
-    }
-    nav {
-      width: 100vw;
-      height: 10vh;
-      background-color: rgb(42, 42, 82);
-    }
-    .container {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid yellow;
-    }
-    @media(min-width:320px){
-    .layout {
-      color: white;
-      border: 1px solid pink;
-    }
-    .fa-diamond {
-      color: rgb(242, 151, 31);
-    }
+    @media (min-width: 500px) {
+      * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+      }
+      nav {
+        width: 100vw;
+        height: 10vh;
+        background-color: rgb(42, 42, 82);
+      }
+      .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid yellow; */
+      }
+      .layout {
+        padding: 0 10px;
+        color: white;
+        border: 1px solid pink;
+      }
+      .fa-bars {
+        display: none;
+      }
+      .fa-diamond {
+        color: rgb(242, 151, 31);
+      }
 
-    li {
-      display: inline-block;
-      border: 1px solid rgb(209, 242, 209);
+      li {
+        display: inline-block;
+        border: 1px solid rgb(209, 242, 209);
+      }
+      div a,
+      li a {
+        color: white;
+      }
     }
-    li a {
-      color: white;
-    }
-  }
-    @media (max-width:320px){
-      
-      
+    @media (max-width: 500px) {
+      * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+      }
+      nav {
+        width: 100vw;
+        height: 10vh;
+        background-color: rgb(42, 42, 82);
+      }
+      .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid yellow; */
+      }
+      .layout {
+        color: white;
+        /* border: 1px solid pink; */
+      }
+      .fa-diamond {
+        color: rgb(242, 151, 31);
+      }
+      .li,
+      li a,
+      .fa-twitter,
+      .fa-facebook {
+        display: none;
+      }
     }
   </style>
   <body>
@@ -66,18 +100,14 @@
         </ul>
       </div>
       <div class="layout">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <a href="http://twitter.com"
+          ><i class="fa fa-twitter" aria-hidden="true"> </i
+        ></a>
+        <a href="http://facebook.com"
+          ><i class="fa fa-facebook" aria-hidden="true"></i
+        ></a>
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
-    
-      <nav class="container">
-        <div class="layout">
-          <i class="fa fa-diamond" aria-hidden="true"></i>DreamCoding
-        </div>
-        <div class="me_layout">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-      
     </nav>
   </body>
 </html>
