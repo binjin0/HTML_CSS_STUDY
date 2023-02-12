@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>nav bar</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Nanum Gothic", sans-serif;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(42, 42, 82);
+      padding: 8px 12px;
+      /*
+        margin을 넣으면 클릭할 수 있는 범위가 좁아짐. 따라서 padding을 씀*/
+      /* border: 1px solid yellow; */
+    }
+    .navbar_logo {
+      font-size: 24px;
+      color: white;
+    }
+    .navbar_logo i {
+      color: rgb(242, 151, 31);
+    }
+    .navbar_menu {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+    }
+    .navbar_menu li {
+      padding: 8px 12px;
+    }
+    .navbar_menu li:hover {
+      background-color: rgb(255, 191, 0);
+      border-radius: 4px;
+    }
+    .navbar_icons {
+      list-style: none;
+      color: white;
+      display: flex;
+      padding-left: 0;
+    }
+    .navbar_icons li {
+      padding: 8px 12px;
+    }
+    .navbar_toogleBtn {
+      position: absolute;
+      right: 32px;
+      font-size: 24px;
+      color: bisque;
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+
+        /* border: 1px solid yellow; */
+      }
+      .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .navbar_menu li {
+        width: 100%;
+        text-align: center;
+      }
+      .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+      }
+      .navbar_toogleBtn {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <i class="fa fa-diamond" aria-hidden="true"></i>
+        <a href="">DreamCoding</a>
+      </div>
+      <ul class="navbar_menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">Weddings</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="">Bookings</a></li>
+      </ul>
+      <ul class="navbar_icons">
+        <li><i class="fa fa-twitter" aria-hidden="true"> </i></li>
+        <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+      </ul>
+      <a href="" class="navbar_toogleBtn"
+        ><i class="fa fa-sort-desc" aria-hidden="true"></i>
+      </a>
+    </nav>
+  </body>
+</html>
