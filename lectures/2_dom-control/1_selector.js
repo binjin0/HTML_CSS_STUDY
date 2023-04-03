@@ -2,10 +2,11 @@
 //1. get 메서드 활용하여 요소 선택하기
 document.getElementById("title");
 console.log(title);
+//title값 수정하기 원래는 운동이였는데 아래 코드 때문에 헬스 3대 운동으로 바뀌겠죠?
 title.textContent = "헬스 3대 운동";
 
 let items = document.getElementsByClassName("item");
-console.log(items);
+console.log(items); //여러개의 요소를 찾아옴
 console.log("스쿼트:", items[0]);
 console.log("벤치프레스:", items[1]);
 console.log("데드리프트:", items[2]);
@@ -34,12 +35,14 @@ console.log("itemAll:", itemAll[2]);
 //textContent는 HTLM태그를모두 제거하고 순수한 텍스트 데이터만 제공하기 때문에 따옴표 안에 태그들을 넣어도 모두 텍스트로 인식한다.
 //h2.innerHTML = "<span>운동@@@</span>";
 //innerHTML은 HTML 태그를 그대로 제공하기 때문에 운동@@@만 텍스트로 받아들인다.
+/*document.querySelector('body').innerHTML='<storng>운동</storng>' => 이런식으로 한꺼번에
+요소를 가져오고 수정하는것까지 할 수 있다.*/
 
 //2.HTML 요소 조작하기
-let input = document.querySelector("input");
-input.setAttribute("placeholder", "헬스를 입력해주세요.");
-input.setAttribute("required", "");
-input.removeAttribute("placeholder");
+let input = document.querySelector("input"); //input 태그를 가져옴
+input.setAttribute("placeholder", "헬스를 입력해주세요."); //input 태그 속성 변경
+input.setAttribute("required", ""); //required라는 값 생성
+input.removeAttribute("placeholder"); //palceholder 속성 값 삭제
 /*javascript로 html요소를 가져와서 html요소가 갖고있는 속성이나 메소드를 활용해서 조작한다.
  */
 

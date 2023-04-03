@@ -16,6 +16,7 @@ sayhello();
 console.log("------------");
 sayhello();
 let obj = {
+  //객체라는 자료형인 변수 선언
   number: 30, //객체가 갖고 있는 변수 : 프로퍼티(속성)
   sayhello: function () {
     console.log("hello1");
